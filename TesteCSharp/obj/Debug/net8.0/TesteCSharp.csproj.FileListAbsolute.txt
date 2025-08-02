@@ -1,0 +1,15 @@
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/TesteCSharp.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/TesteCSharp.AssemblyInfoInputs.cache
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/TesteCSharp.AssemblyInfo.cs
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/TesteCSharp.csproj.CoreCompileInputs.cache
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/TesteCSharp.sourcelink.json
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/bin/Debug/net8.0/TesteCSharp
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/bin/Debug/net8.0/TesteCSharp.deps.json
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/bin/Debug/net8.0/TesteCSharp.runtimeconfig.json
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/bin/Debug/net8.0/TesteCSharp.dll
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/bin/Debug/net8.0/TesteCSharp.pdb
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/TesteCSharp.dll
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/refint/TesteCSharp.dll
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/TesteCSharp.pdb
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/TesteCSharp.genruntimeconfig.cache
+/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/Debug/net8.0/ref/TesteCSharp.dll
