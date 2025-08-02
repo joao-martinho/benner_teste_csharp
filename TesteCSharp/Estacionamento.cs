@@ -31,20 +31,17 @@ public class Estacionamento
 
     private void EscreverCsv(Veiculo veiculo)
     {
-        string pastaDestino = Path.Combine(Directory.GetCurrentDirectory(), "Data");
-        string caminhoCsv = Path.Combine(pastaDestino, "dados.csv");
-
         string linhaCsv = string.Join(",",
             veiculo.Placa,
-            veiculo.HorarioDeChegada.ToString("dd/MM/yyyy HH:mm"),
-            veiculo.HorarioDeSaida.ToString("dd/MM/yyyy HH:mm"),
-            veiculo.Duracao.ToString("HH:mm:ss"),
+            veiculo.HorarioDeChegada.ToString("dd/MM/yyyy HH:mm:ss"),
+            veiculo.HorarioDeSaida.ToString("dd/MM/yyyy HH:mm:ss"),
+            veiculo.Duracao.ToString(@"hh\:mm\:ss"),
             veiculo.TempoCobrado,
             veiculo.Preco,
             veiculo.ValorAPagar
         );
 
-        using var escritor = new StreamWriter(caminhoCsv, append: true);
+        using var escritor = new StreamWriter("dados.csv", append: true);
         escritor.WriteLine(linhaCsv);
     }
 
