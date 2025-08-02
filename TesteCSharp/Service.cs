@@ -1,4 +1,4 @@
-public class Estacionamento
+public class Service
 {
     public void MarcarEntrada(string placa, DateTime horarioDeChegada, DateTime horarioDeSaida, TabelaDePrecos tabelaDePrecos)
     {
@@ -14,21 +14,25 @@ public class Estacionamento
 
         string tempoCobradoStr = tempoCobrado == 0 ? "0.5" : tempoCobrado.ToString();
 
-        int valorAPagar;
+        int valorAPagarInt;
         if (tempoCobrado == 0)
         {
-            valorAPagar = tabelaDePrecos.PrecoDaHoraInicial / 2;
+            valorAPagarInt = tabelaDePrecos.PrecoDaHoraInicial / 2;
         }
         else
         {
-            valorAPagar = tabelaDePrecos.PrecoDaHoraInicial + (tempoCobrado - 1) * tabelaDePrecos.PrecoDaHoraAdicional;
+            valorAPagarInt = tabelaDePrecos.PrecoDaHoraInicial + (tempoCobrado - 1) * tabelaDePrecos.PrecoDaHoraAdicional;
         }
+
+        string valorAPagar = valorAPagarInt.ToString();
+        string preco = tabelaDePrecos.PrecoDaHoraInicial.ToString();
 
         var veiculo = new Veiculo(
             placa,
             horarioDeChegada,
             horarioDeSaida,
             duracao,
+            preco,
             tempoCobradoStr,
             valorAPagar
         );
@@ -36,16 +40,55 @@ public class Estacionamento
         EscreverCsv(veiculo);
     }
 
+    public Veiculo BuscarVeiculo(string placa)
+    {
+        Console.WriteLine("service");
+        string horarioDeChegadaStr = "";
+        string horarioDeSaidaStr = "";
+        string duracaoStr = "";
+        string tempoCobrado = "";
+        string preco = "";
+        string valorAPagar = "";
+
+
+        foreach (var linha in File.ReadLines("dados.csv"))
+        {
+            var partes = linha.Split(',');
+
+            if (partes[0].Trim() == placa)
+            {
+                Console.WriteLine("dentro do if");
+                horarioDeChegadaStr = partes[1];
+                horarioDeSaidaStr = partes[2];
+                duracaoStr = partes[3];
+                tempoCobrado = partes[4];
+                preco = partes[5];
+                valorAPagar = partes[6];
+                Console.WriteLine(valorAPagar);
+
+                break;
+            }
+        }
+
+        DateTime horarioDeChegada = DateTime.Parse(horarioDeChegadaStr);
+        DateTime horarioDeSaida = DateTime.Parse(horarioDeSaidaStr);
+        TimeSpan duracao = TimeSpan.Parse(duracaoStr);
+
+        var veiculo = new Veiculo(placa, horarioDeChegada, horarioDeSaida, duracao, tempoCobrado, preco, valorAPagar);
+
+        return veiculo;
+    }
+
     private void EscreverCsv(Veiculo veiculo)
     {
-        string linhaCsv = string.Join(",",
+        string linhaCsv = string.Join(
             veiculo.Placa,
             veiculo.HorarioDeChegada.ToString("dd/MM/yyyy HH:mm:ss"),
             veiculo.HorarioDeSaida.ToString("dd/MM/yyyy HH:mm:ss"),
             veiculo.Duracao.ToString(@"hh\:mm\:ss"),
             veiculo.TempoCobrado,
-            veiculo.Preco,
-            veiculo.ValorAPagar
+            "R$ " + veiculo.Preco + ".00",
+            "R$ " + veiculo.ValorAPagar + ".00"
         );
 
         try
