@@ -2,6 +2,13 @@ public class Estacionamento
 {
     public void MarcarEntrada(string placa, DateTime horarioDeChegada, DateTime horarioDeSaida, TabelaDePrecos tabelaDePrecos)
     {
+
+        // medida defensiva caso o método seja acessado de fora de Program.cs
+        if (horarioDeSaida <= horarioDeChegada)
+        {
+            throw new ArgumentException("ERRO: o horário de saída deve ser posterior ao horário de chegada.");
+        }
+
         TimeSpan duracao = CalcularDuracao(horarioDeChegada, horarioDeSaida);
         int tempoCobrado = CalcularTempoCobrado(horarioDeChegada, horarioDeSaida);
 
@@ -41,8 +48,15 @@ public class Estacionamento
             veiculo.ValorAPagar
         );
 
-        using var escritor = new StreamWriter("dados.csv", append: true);
-        escritor.WriteLine(linhaCsv);
+        try
+        {
+            using var escritor = new StreamWriter("dados.csv", append: true);
+            escritor.WriteLine(linhaCsv);
+        }
+        catch (IOException e)
+        {
+            Console.WriteLine($"Erro ao salvar os dados no arquivo: {e.Message}");
+        }
     }
 
     private TimeSpan CalcularDuracao(DateTime horarioDeChegada, DateTime horarioDeSaida)
