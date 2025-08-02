@@ -17,8 +17,8 @@ public class Veiculo
         HorarioDeSaida = dataDeSaida;
         Duracao = duracao;
         TempoCobrado = tempoCobrado;
-        Preco = "R$ " + 2 + ",00";
-        ValorAPagar = "R$ " + valorAPagar + ",00";
+        Preco = "R$ " + 2 + ".00";
+        ValorAPagar = "R$ " + valorAPagar + ".00";
     }
 
     // construtor sem argumentos

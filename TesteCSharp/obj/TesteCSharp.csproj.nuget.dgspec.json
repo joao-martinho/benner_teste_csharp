@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/joao/Temporário/TesteCSharp/TesteCSharp.csproj": {}
+    "/home/joao/GitHub/benner_teste_csharp/TesteCSharp/TesteCSharp.csproj": {}
   },
   "projects": {
-    "/home/joao/Temporário/TesteCSharp/TesteCSharp.csproj": {
+    "/home/joao/GitHub/benner_teste_csharp/TesteCSharp/TesteCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/joao/Temporário/TesteCSharp/TesteCSharp.csproj",
+        "projectUniqueName": "/home/joao/GitHub/benner_teste_csharp/TesteCSharp/TesteCSharp.csproj",
         "projectName": "TesteCSharp",
-        "projectPath": "/home/joao/Temporário/TesteCSharp/TesteCSharp.csproj",
+        "projectPath": "/home/joao/GitHub/benner_teste_csharp/TesteCSharp/TesteCSharp.csproj",
         "packagesPath": "/home/joao/.nuget/packages/",
-        "outputPath": "/home/joao/Temporário/TesteCSharp/obj/",
+        "outputPath": "/home/joao/GitHub/benner_teste_csharp/TesteCSharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/joao/.nuget/NuGet/NuGet.Config"

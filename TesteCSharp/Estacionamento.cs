@@ -5,7 +5,7 @@ public class Estacionamento
         TimeSpan duracao = CalcularDuracao(horarioDeChegada, horarioDeSaida);
         int tempoCobrado = CalcularTempoCobrado(horarioDeChegada, horarioDeSaida);
 
-        string tempoCobradoStr = tempoCobrado == 0 ? "0,5" : tempoCobrado.ToString();
+        string tempoCobradoStr = tempoCobrado == 0 ? "0.5" : tempoCobrado.ToString();
 
         int valorAPagar;
         if (tempoCobrado == 0)
