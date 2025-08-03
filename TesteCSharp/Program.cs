@@ -8,7 +8,6 @@
     static void ExecutarControle()
     {
         string ?opcao;
-
         do
         {
             Console.WriteLine("CONTROLE DE ESTACIONAMENTO");
@@ -34,6 +33,7 @@
                     break;
             }
 
+
         } while (opcao != "3");
         
     }
@@ -49,31 +49,31 @@
         var service = new Service();
 
         string placa;
-            do
+        do
+        {
+            Console.Write("Placa do veículo: ");
+            placa = Console.ReadLine()?.Trim()!;
+
+            if (string.IsNullOrWhiteSpace(placa))
             {
-                Console.Write("Placa do veículo: ");
-                placa = Console.ReadLine()?.Trim()!;
+                Console.WriteLine("ERRO: a placa não pode estar vazia.");
+            }
 
-                if (string.IsNullOrWhiteSpace(placa))
-                {
-                    Console.WriteLine("ERRO: a placa não pode estar vazia.");
-                }
+        } while (string.IsNullOrWhiteSpace(placa));
 
-            } while (string.IsNullOrWhiteSpace(placa));
+        DateTime dataDeEntrada = LerData("Horário de entrada (dd/MM/yyyy HH:mm:ss): ");
+        DateTime dataDeSaida;
 
-            DateTime dataDeEntrada = LerData("Horário de entrada (dd/MM/yyyy HH:mm:ss): ");
-            DateTime dataDeSaida;
+        do
+        {
+            dataDeSaida = LerData("Horário de saída (dd/MM/yyyy HH:mm:ss): ");
 
-            do
+            if (dataDeSaida <= dataDeEntrada)
             {
-                dataDeSaida = LerData("Horário de saída (dd/MM/yyyy HH:mm:ss): ");
+                Console.WriteLine("ERRO: a data de saída deve ser posterior à data de entrada.");
+            }
 
-                if (dataDeSaida <= dataDeEntrada)
-                {
-                    Console.WriteLine("ERRO: a data de saída deve ser posterior à data de entrada.");
-                }
-
-            } while (dataDeSaida <= dataDeEntrada);
+        } while (dataDeSaida <= dataDeEntrada);
 
         service.CadastrarVeiculo(placa!, dataDeEntrada, dataDeSaida, tabelaDePrecos);
     }

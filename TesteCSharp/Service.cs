@@ -2,7 +2,6 @@ public class Service
 {
     public void CadastrarVeiculo(string placa, DateTime horarioDeChegada, DateTime horarioDeSaida, TabelaDePrecos tabelaDePrecos)
     {
-
         // medida defensiva caso o método seja acessado de fora de Program.cs
         if (horarioDeSaida <= horarioDeChegada)
         {
@@ -48,7 +47,6 @@ public class Service
         string tempoCobrado = "";
         string preco = "";
         string valorAPagar = "";
-
 
         foreach (var linha in File.ReadLines("dados.csv"))
         {
@@ -116,4 +114,5 @@ public class Service
 
         return horasCompletas;
     }
+    
 }

@@ -20,4 +20,5 @@ public class TabelaDePrecos
     {
         // intencionalmente vazio
     }
+    
 }
