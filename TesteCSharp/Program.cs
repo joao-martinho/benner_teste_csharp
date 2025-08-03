@@ -13,7 +13,7 @@
         {
             Console.WriteLine("CONTROLE DE ESTACIONAMENTO");
             Console.WriteLine("==========================");
-            Console.WriteLine("1) Marcar entrada");
+            Console.WriteLine("1) Cadastrar veículo");
             Console.WriteLine("2) Buscar veículo");
             Console.WriteLine("3) Sair");
 
@@ -22,7 +22,7 @@
             switch (opcao)
             {
                 case "1":
-                    MarcarEntrada();
+                    CadastrarVeiculo();
                     break;
                 case "2":
                     Console.WriteLine(BuscarVeiculo());
@@ -38,7 +38,7 @@
         
     }
 
-    static void MarcarEntrada()
+    static void CadastrarVeiculo()
     {
         DateTime inicioDaVigencia = new DateTime(2024, 1, 1);
         DateTime fimDaVigencia = new DateTime(2024, 12, 31);
@@ -75,7 +75,7 @@
 
             } while (dataDeSaida <= dataDeEntrada);
 
-        service.MarcarEntrada(placa!, dataDeEntrada, dataDeSaida, tabelaDePrecos);
+        service.CadastrarVeiculo(placa!, dataDeEntrada, dataDeSaida, tabelaDePrecos);
     }
 
     static string BuscarVeiculo()

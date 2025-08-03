@@ -1,6 +1,6 @@
 public class Service
 {
-    public void MarcarEntrada(string placa, DateTime horarioDeChegada, DateTime horarioDeSaida, TabelaDePrecos tabelaDePrecos)
+    public void CadastrarVeiculo(string placa, DateTime horarioDeChegada, DateTime horarioDeSaida, TabelaDePrecos tabelaDePrecos)
     {
 
         // medida defensiva caso o método seja acessado de fora de Program.cs
@@ -62,7 +62,6 @@ public class Service
                 tempoCobrado = partes[4];
                 preco = partes[5];
                 valorAPagar = partes[6];
-                Console.WriteLine(valorAPagar);
 
                 break;
             }
