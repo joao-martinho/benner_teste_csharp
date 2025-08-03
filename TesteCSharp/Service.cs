@@ -42,7 +42,6 @@ public class Service
 
     public Veiculo BuscarVeiculo(string placa)
     {
-        Console.WriteLine("service");
         string horarioDeChegadaStr = "";
         string horarioDeSaidaStr = "";
         string duracaoStr = "";
@@ -57,7 +56,6 @@ public class Service
 
             if (partes[0].Trim() == placa)
             {
-                Console.WriteLine("dentro do if");
                 horarioDeChegadaStr = partes[1];
                 horarioDeSaidaStr = partes[2];
                 duracaoStr = partes[3];

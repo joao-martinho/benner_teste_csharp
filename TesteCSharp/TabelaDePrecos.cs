@@ -20,9 +20,4 @@ public class TabelaDePrecos
     {
         // intencionalmente vazio
     }
-
-    public bool EstaVigentePara(DateTime data)
-    {
-        return data >= InicioDaVigencia && data <= FimDaVigencia;
-    }
 }

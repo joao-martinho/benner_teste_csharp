@@ -80,7 +80,6 @@
 
     static string BuscarVeiculo()
     {
-        Console.WriteLine("buscar veiculo");
         Console.Write("Placa do veículo a buscar: ");
         string placa = Console.ReadLine()?.Trim()!;
 
