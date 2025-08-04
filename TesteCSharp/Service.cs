@@ -48,6 +48,7 @@ public class Service
         string preco = "";
         string valorAPagar = "";
 
+        bool encontrou = false;
         foreach (var linha in File.ReadLines("dados.csv"))
         {
             var partes = linha.Split(',');
@@ -61,17 +62,23 @@ public class Service
                 preco = partes[5];
                 valorAPagar = partes[6];
 
+                encontrou = true;
                 break;
             }
         }
 
-        DateTime horarioDeChegada = DateTime.Parse(horarioDeChegadaStr);
-        DateTime horarioDeSaida = DateTime.Parse(horarioDeSaidaStr);
-        TimeSpan duracao = TimeSpan.Parse(duracaoStr);
+        if (encontrou)
+        {
+            DateTime horarioDeChegada = DateTime.Parse(horarioDeChegadaStr);
+            DateTime horarioDeSaida = DateTime.Parse(horarioDeSaidaStr);
+            TimeSpan duracao = TimeSpan.Parse(duracaoStr);
 
-        var veiculo = new Veiculo(placa, horarioDeChegada, horarioDeSaida, duracao, tempoCobrado, preco, valorAPagar);
+            var veiculo = new Veiculo(placa, horarioDeChegada, horarioDeSaida, duracao, tempoCobrado, preco, valorAPagar);
 
-        return veiculo;
+            return veiculo;
+        }
+
+        return null;
     }
 
     private void EscreverCsv(Veiculo veiculo)

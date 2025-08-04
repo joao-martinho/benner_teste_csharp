@@ -86,18 +86,23 @@
         var service = new Service();
         var veiculo = service.BuscarVeiculo(placa);
 
-        string retorno =
-        "---------------" + "\n" +
-        "Placa: " + veiculo.Placa + "\n" +
-        "Horário de chegada: " + veiculo.HorarioDeChegada + "\n" +
-        "Horário de saída: " + veiculo.HorarioDeSaida + "\n" +
-        "Duração: " + veiculo.Duracao + "\n" +
-        "Tempo cobrado (hora): " + veiculo.TempoCobrado + "\n" +
-        "Preço: " + veiculo.Preco + "\n" +
-        "Valor a pagar: " + veiculo.ValorAPagar + "\n" +
-        "---------------";
+        if (veiculo != null)
+        {
+            string retorno =
+            "---------------" + "\n" +
+            "Placa: " + veiculo.Placa + "\n" +
+            "Horário de chegada: " + veiculo.HorarioDeChegada + "\n" +
+            "Horário de saída: " + veiculo.HorarioDeSaida + "\n" +
+            "Duração: " + veiculo.Duracao + "\n" +
+            "Tempo cobrado (hora): " + veiculo.TempoCobrado + "\n" +
+            "Preço: " + veiculo.Preco + "\n" +
+            "Valor a pagar: " + veiculo.ValorAPagar + "\n" +
+            "---------------";
 
-        return retorno;
+            return retorno;
+        }
+
+        return "Veículo não encontrado.";        
     }
 
     static DateTime LerData(string mensagem)
