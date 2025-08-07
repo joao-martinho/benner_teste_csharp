@@ -1,3 +1,0 @@
-# Observações (importante!):
-
-Da maneira como eu entendi, a figura contida no arquivo do enunciado era só ilustrativa e não representava as regras de negócio descritas no texto. Por exemplo, o enunciado dizia que seria cobrado metade do valor da hora inicial (no exemplo, 2 reais) para períodos de 30 minutos ou menos. O primeiro carro teve duração de apenas 10 minutos, mas pagou por uma hora cheia. Da mesma maneira, um carro que permancesse 4 horas deveria pagar 5 reais, e não 8 (2 reais da hora inicial e mais 1 para cada hora adicional). Dadas estas inconsistências, eu parti da premissa de que a figura foi projetada para um enunciado diferente com diferentes regras de negócio, e só me serviria para entender quais funcionalidades a aplicação deve ter.
